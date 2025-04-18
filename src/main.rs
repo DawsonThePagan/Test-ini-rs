@@ -63,6 +63,21 @@ fn main() {
         Ok(_) => println!("Test passed"),
         Err(e) => println!("Test failed. {}", e)
     }
+    
+    println!("Check the good.ini file");
+    pause();
+    
+    test1.remove("New", "test");
+    test1.save().unwrap();
+    
+    println!("Check good.ini file");
+    pause();
+    
+    test1.remove_section("New");
+    test1.save().unwrap();
+    
+    println!("Check good.ini file");
+    pause();
 
     println!("Test 7 = Load an invalid file");
 
